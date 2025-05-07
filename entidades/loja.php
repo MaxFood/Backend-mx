@@ -1,91 +1,78 @@
 <?php
 
-Class loja {
+class Loja {
 
     private $idLoja;
     private $nome;
     private $email;
     private $senha;
-    private $Cnpj;
+    private $cnpj;
     private $endereco;
     private $telefone;  
 
-    function getIdLoja()
-    {
-        return $this->idLoja;
-    }   
-        function setidLoja($idLoja): void
-    {
-        $this->idLoja = $idLoja;
-    }   
-    function getnome($nome)
-    {
-        return $this->$nome;
-    }
-    function setnome($nome): void
-    {
-        $this->$nome = $nome;
-    }
-    function getemail($email)
-    {
-        return $this->$email;
-    }       
-    function setemail($email): void
-    {
-        $this->$email = $email;
-    }
-    function getsenha($senha)
-    {
-        return $this->$senha;
-    }
-    function setsenha($senha): void
-    {
-        $this->$senha = $senha;
-    }
-    function getCnpj($Cnpj)
-    {
-        return $this->$Cnpj;
-    }
-    function setCnpj($Cnpj): void
-    {
-        $this->$Cnpj = $Cnpj;
-    }
-    function getendereco($endereco)
-    {
-        return $this->$endereco;
-    }
-    function setendereco($endereco): void
-    {
-        $this->$endereco = $endereco;
-    }
-    function gettelefone($telefone)
-    {
-        return $this->$telefone;
-    }
-    function settelefone($telefone): void
-    {
-        $this->$telefone = $telefone;
-    }
-    function loja ($idLoja, $nome, $email, $senha, $Cnpj, $endereco, $telefone) {
+    public function __construct($idLoja, $nome, $email, $senha, $cnpj, $endereco, $telefone) {
         $this->idLoja = $idLoja;
         $this->nome = $nome;
         $this->email = $email;
         $this->senha = $senha;
-        $this->Cnpj = $Cnpj;
+        $this->cnpj = $cnpj;
         $this->endereco = $endereco;
         $this->telefone = $telefone;
     }
 
+    public function getIdLoja() {
+        return $this->idLoja;
+    }
 
+    public function setIdLoja($idLoja): void {
+        $this->idLoja = $idLoja;
+    }
 
+    public function getNome() {
+        return $this->nome;
+    }
 
+    public function setNome($nome): void {
+        $this->nome = $nome;
+    }
 
+    public function getEmail() {
+        return $this->email;
+    }
 
+    public function setEmail($email): void {
+        $this->email = $email;
+    }
 
+    public function getSenha() {
+        return $this->senha;
+    }
 
+    public function setSenha($senha): void {
+        $this->senha = $senha;
+    }
 
+    public function getCnpj() {
+        return $this->cnpj;
+    }
 
+    public function setCnpj($cnpj): void {
+        $this->cnpj = $cnpj;
+    }
 
+    public function getEndereco() {
+        return $this->endereco;
+    }
 
+    public function setEndereco($endereco): void {
+        $this->endereco = $endereco;
+    }
 
+    public function getTelefone() {
+        return $this->telefone;
+    }
+
+    public function setTelefone($telefone): void {
+        $this->telefone = $telefone;
+    }
 }

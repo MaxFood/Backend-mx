@@ -1,6 +1,6 @@
 <?php
 
-Class user {
+class User {
 
     private $idUsuario;
     private $nome;
@@ -14,102 +14,109 @@ Class user {
     private $cidade;
     private $estado;
 
-    function getsenha($senha)
-    {
-        return $this->$senha;
-    }
-    function setsenha($senha)
-    {
-        $this->$senha = $senha;
-    }
-    function getdatNascimento($dataNascimento)
-    {
-        return $this->$dataNascimento;
-    }
-    function setdataNascimento($dataNascimento)
-    {
-        $this->$dataNascimento = $dataNascimento;
-    }
-
-    function getcpf($cpf)
-    {
-        return $this->$cpf;
-    }
-    function setcpf($cpf): void
-    {
-        $this->$cpf = $cpf;
-    }       
-
-    function gettelefone($telefone)
-    {
-        return $this->$telefone;
-    }           
-    function settelefone($telefone): void
-    {
-        $this->$telefone = $telefone;
-    }
-    function getendereco($endereco)
-    {
-        return $this->$endereco;
-    }
-    function setendereco($endereco)
-    {
-        $this->$endereco = $endereco;
-    }   
-    function getcep($cep)
-    {
-        return $this->$cep;
-    }
-    function setcep($cep)
-    {
-        $this->$cep = $$cep;
-    }
-    function getcidade($cidade)
-    {
-        return $this->$cidade;
-    }
-    function setcidade($cidade)
-    {
-        $this->$cidade =$cidade;
-    }
-    function getestado($estado)
-    {
-        return $this->$estado;
-    }
-    function setestado($estado)
-    {
-         $this->$estado = $estado;
-    }
-
-    function getIdUsuario()
-    {
+    // Getters
+    public function getIdUsuario() {
         return $this->idUsuario;
     }
 
-    function getNome()
-    {
+    public function getNome() {
         return $this->nome;
     }
 
-    function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
+    public function getSenha() {
+        return $this->senha;
+    }
 
-    function setIdUsuario($idUsuario)
-    {
+    public function getDataNascimento() {
+        return $this->dataNascimento;
+    }
+
+    public function getCpf() {
+        return $this->cpf;
+    }
+
+    public function getTelefone() {
+        return $this->telefone;
+    }
+
+    public function getEndereco() {
+        return $this->endereco;
+    }
+
+    public function getCep() {
+        return $this->cep;
+    }
+
+    public function getCidade() {
+        return $this->cidade;
+    }
+
+    public function getEstado() {
+        return $this->estado;
+    }
+
+    // Setters
+    public function setIdUsuario($idUsuario) {
         $this->idUsuario = $idUsuario;
     }
 
-    function setNome($nome)
-    {
+    public function setNome($nome) {
         $this->nome = $nome;
     }
 
-    function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
     }
 
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+    public function setDataNascimento($dataNascimento) {
+        $this->dataNascimento = $dataNascimento;
+    }
+
+    public function setCpf($cpf) {
+        $this->cpf = $cpf;
+    }
+
+    public function setTelefone($telefone) {
+        $this->telefone = $telefone;
+    }
+
+    public function setEndereco($endereco) {
+        $this->endereco = $endereco;
+    }
+
+    public function setCep($cep) {
+        $this->cep = $cep;
+    }
+
+    public function setCidade($cidade) {
+        $this->cidade = $cidade;
+    }
+
+    public function setEstado($estado) {
+        $this->estado = $estado;
+    }
+
+    public function __construct($idUsuario, $nome, $email, $senha, $dataNascimento, $cpf, $telefone, $endereco, $cep, $cidade, $estado) {
+        $this->idUsuario = $idUsuario;
+        $this->nome = $nome;
+        $this->email = $email;
+        $this->senha = $senha;
+        $this->dataNascimento = $dataNascimento;
+        $this->cpf = $cpf;
+        $this->telefone = $telefone;
+        $this->endereco = $endereco;
+        $this->cep = $cep;
+        $this->cidade = $cidade;
+        $this->estado = $estado;
+    }
 }
+
+
