@@ -2,30 +2,19 @@
 require_once('../banco/Conexao.php');
 
 $pdo = Conexao::getInstance();
-if (!$pdo) {
-    echo "Falha ao conectar ao banco de dados.";
-    exit;
-}
 
 $nome = trim($_POST['nome']);
 $email = trim($_POST['email']);
 $senha = password_hash(trim($_POST['senha']), PASSWORD_DEFAULT);
-$dataNascimento = trim($_POST['dataNascimento']);
-$cpf = trim($_POST['cpf']);
+$cnpj = trim( $_POST ['cnpj']);
 $telefone = trim($_POST['telefone']);
-
+$endereco = trim($_POST['endereco']);
 $cep = trim($_POST['cep']);
 $cidade = trim($_POST['cidade']);
 $estado = trim($_POST['estado']);
-$endereco = trim($_POST['endereco']);
 $complemento = trim($_POST['complemento']);
 $numero = trim($_POST['numero']);
 
-
-$sql = "SELECT COUNT(*) AS total FROM usuario WHERE email = :email";
-$stmt = $pdo->prepare($sql);
-$stmt->bindParam(':email', $email, PDO::PARAM_STR);
-$stmt->execute();
 
 $sqlEndereco = "INSERT INTO endereco(endereco, cep, cidade, estado, numero, complemento)
                 VALUES (:endereco, :cep, :cidade, :estado, :numero, :complemento)";
@@ -39,18 +28,16 @@ $stmt->execute([
 	':numero' => $numero
 ]);
 
-$idEndereco = $pdo->lastInsertId();
+$id_endereco = $pdo->lastInsertId();
 
-$sqlUsuario = "INSERT INTO usuario (nome, email, senha, dataNascimento, cpf, telefone, id_endereco)
-               VALUES (:nome, :email, :senha, :dataNascimento, :cpf, :telefone, :id_endereco)";
-$stmt = $pdo->prepare($sqlUsuario);
+$sqlLoja =  "INSERT INTO loja (nome_loja, email, senha, cnpj, telefone, id_endereco) 
+        values (:nome_loja, :email, :senha, :cnpj, :telefone , :id_endereco)";
+$stmt = $pdo->prepare($sqlLoja);
 $stmt->execute([
-    ':nome' => $nome,
+    ':nome_loja' => $nome,
     ':email' => $email,
     ':senha' => $senha,
-    ':dataNascimento' => $dataNascimento,
-    ':cpf' => $cpf,
+    ':cnpj' => $cnpj,
     ':telefone' => $telefone,
-    ':id_endereco' => $idEndereco
-]);
-
+    ':id_endereco' => $id_endereco
+]); 

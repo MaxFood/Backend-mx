@@ -33,6 +33,15 @@ CREATE TABLE `entregador` (
   CONSTRAINT `entregador_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `entregador`
+--
+
+LOCK TABLES `entregador` WRITE;
+/*!40000 ALTER TABLE `entregador` DISABLE KEYS */;
+/*!40000 ALTER TABLE `entregador` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -43,4 +52,4 @@ CREATE TABLE `entregador` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-21 11:58:19
+-- Dump completed on 2025-05-21 15:31:50

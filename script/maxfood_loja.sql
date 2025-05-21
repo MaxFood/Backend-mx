@@ -26,12 +26,25 @@ CREATE TABLE `loja` (
   `id_loja` int NOT NULL AUTO_INCREMENT,
   `cnpj` varchar(20) NOT NULL,
   `senha` varchar(255) NOT NULL,
-  `telefone` varchar(20) DEFAULT NULL,
+  `telefone` varchar(20) NOT NULL,
   `nome_loja` varchar(100) NOT NULL,
+  `id_endereco` int NOT NULL,
+  `email` varchar(100) NOT NULL,
   PRIMARY KEY (`id_loja`),
-  UNIQUE KEY `cnpj` (`cnpj`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  UNIQUE KEY `cnpj` (`cnpj`),
+  KEY `id_endereco_idx` (`id_endereco`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `loja`
+--
+
+LOCK TABLES `loja` WRITE;
+/*!40000 ALTER TABLE `loja` DISABLE KEYS */;
+INSERT INTO `loja` VALUES (1,'10365425874','$2y$10$1skvowZOZC3yX.g922RUH.5o6XRkXIco2sUG3zxeoL95z8VG.i5EW','991387703','lojinha',12,'miltonjr@gmail');
+/*!40000 ALTER TABLE `loja` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -42,4 +55,4 @@ CREATE TABLE `loja` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-21 11:58:18
+-- Dump completed on 2025-05-21 15:31:49

@@ -9,6 +9,11 @@ class Loja {
     private $cnpj;
     private $endereco;
     private $telefone;  
+    private $complemento;
+    private $numero;
+    private $cep;
+    private $cidade;
+    private $estado;
 
     public function __construct($idLoja, $nome, $email, $senha, $cnpj, $endereco, $telefone) {
         $this->idLoja = $idLoja;
@@ -75,4 +80,41 @@ class Loja {
     public function setTelefone($telefone): void {
         $this->telefone = $telefone;
     }
+    public function getComplemento() {
+        return $this->complemento;
+    }   
+
+    public function setComplemento($complemento): void {
+        $this->complemento = $complemento;
+    }
+
+    public function getNumero() {
+        return $this->numero;
+    }
+    public function setNumero($numero): void {
+        $this->numero = $numero;
+    }
+
+    public function getCep() {
+        return $this->cep;
+    }
+    public function setCep($cep): void {
+        $this->cep = $cep;
+    }
+    public function getCidade() {
+        return $this->cidade;
+    }   
+    public function setCidade($cidade): void {
+        $this->cidade = $cidade;
+    }
+    public function getEstado() {
+        return $this->estado;
+    }
+    public function setEstado($estado): void {
+        $this->estado = $estado;
+    }
+    
+
+
+
 }

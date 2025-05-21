@@ -31,8 +31,18 @@ CREATE TABLE `endereco` (
   `numero` varchar(100) DEFAULT NULL,
   `complemento` varchar(240) DEFAULT NULL,
   PRIMARY KEY (`id_endereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `endereco`
+--
+
+LOCK TABLES `endereco` WRITE;
+/*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
+INSERT INTO `endereco` VALUES (1,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(2,'','','','','',''),(3,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(4,'QR 425 Conjunto 18 casa 18',NULL,NULL,NULL,NULL,NULL),(5,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(6,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(7,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(8,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(9,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(10,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(11,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18'),(12,'QR 425 Conjunto 18 casa 18','72327-018','Brasília','DF','425','Conjunto 18');
+/*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -43,4 +53,4 @@ CREATE TABLE `endereco` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-21 11:58:19
+-- Dump completed on 2025-05-21 15:31:49
