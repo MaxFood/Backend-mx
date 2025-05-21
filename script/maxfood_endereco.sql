@@ -24,15 +24,14 @@ DROP TABLE IF EXISTS `endereco`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `endereco` (
   `id_endereco` int NOT NULL AUTO_INCREMENT,
-  `id_usuario` int DEFAULT NULL,
   `endereco` varchar(255) DEFAULT NULL,
   `cep` varchar(10) DEFAULT NULL,
   `cidade` varchar(100) DEFAULT NULL,
   `estado` varchar(50) DEFAULT NULL,
-  PRIMARY KEY (`id_endereco`),
-  KEY `id_usuario` (`id_usuario`),
-  CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `numero` varchar(100) DEFAULT NULL,
+  `complemento` varchar(240) DEFAULT NULL,
+  PRIMARY KEY (`id_endereco`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -44,4 +43,4 @@ CREATE TABLE `endereco` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-07 15:32:39
+-- Dump completed on 2025-05-21 11:58:19

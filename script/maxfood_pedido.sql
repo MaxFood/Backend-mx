@@ -16,20 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `loja`
+-- Table structure for table `pedido`
 --
 
-DROP TABLE IF EXISTS `loja`;
+DROP TABLE IF EXISTS `pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `loja` (
-  `id_loja` int NOT NULL AUTO_INCREMENT,
-  `cnpj` varchar(20) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `telefone` varchar(20) DEFAULT NULL,
-  `nome_loja` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_loja`),
-  UNIQUE KEY `cnpj` (`cnpj`)
+CREATE TABLE `pedido` (
+  `id_pedido` int NOT NULL AUTO_INCREMENT,
+  `id_usuario` int DEFAULT NULL,
+  `id_loja` int DEFAULT NULL,
+  `id_entregador` int DEFAULT NULL,
+  `status` varchar(50) DEFAULT NULL,
+  `data_pedido` datetime DEFAULT CURRENT_TIMESTAMP,
+  `valor_total` decimal(10,2) DEFAULT NULL,
+  PRIMARY KEY (`id_pedido`),
+  KEY `id_usuario` (`id_usuario`),
+  KEY `id_loja` (`id_loja`),
+  KEY `id_entregador` (`id_entregador`),
+  CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE,
+  CONSTRAINT `pedido_ibfk_2` FOREIGN KEY (`id_loja`) REFERENCES `loja` (`id_loja`) ON DELETE CASCADE,
+  CONSTRAINT `pedido_ibfk_3` FOREIGN KEY (`id_entregador`) REFERENCES `entregador` (`id_entregador`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -42,4 +49,4 @@ CREATE TABLE `loja` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-07 15:32:40
+-- Dump completed on 2025-05-21 11:58:19

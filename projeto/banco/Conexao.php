@@ -2,7 +2,7 @@
 
 abstract class Conexao
 {    
-    public static function getInstance()
+    public static function getInstance() 
     {
         $dsn = 'mysql:host=localhost;dbname=Maxfood';
         $user = 'root';

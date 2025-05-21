@@ -1,12 +1,9 @@
 <?php
-// Inclui o arquivo que contém a classe Conexao
-require_once 'Conexao.php'; // Substitua pelo caminho correto se necessário
+require_once 'Conexao.php'; 
 
-// Tenta obter uma instância da conexão
 try {
     $pdo = Conexao::getInstance();
     
-    // Verifica se a conexão foi bem-sucedida
     if ($pdo) {
         echo "Conexão estabelecida com sucesso!<br>";
     } else {

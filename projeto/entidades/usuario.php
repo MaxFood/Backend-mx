@@ -10,6 +10,8 @@ class User {
     private $cpf;
     private $telefone;  
     private $endereco;
+    private $complemento;
+    private $numero;
     private $cep;
     private $cidade;
     private $estado;
@@ -41,10 +43,6 @@ class User {
 
     public function getTelefone() {
         return $this->telefone;
-    }
-
-    public function getEndereco() {
-        return $this->endereco;
     }
 
     public function getCep() {
@@ -92,6 +90,23 @@ class User {
         $this->endereco = $endereco;
     }
 
+    public function setComplemento($complemento) {
+        $this->complemento = $complemento;
+    }
+
+    public function getEndereco() {
+        return $this->endereco;
+    }
+    public function getComplemento() {
+        return $this->complemento;
+    }
+    public function getNumero() {
+        return $this->numero;
+    }
+    public function setNumero($numero) {
+        $this->numero = $numero;
+    }
+
     public function setCep($cep) {
         $this->cep = $cep;
     }
@@ -104,7 +119,7 @@ class User {
         $this->estado = $estado;
     }
 
-    public function __construct($idUsuario, $nome, $email, $senha, $dataNascimento, $cpf, $telefone, $endereco, $cep, $cidade, $estado) {
+    public function __construct($idUsuario, $nome, $email, $senha, $dataNascimento, $cpf, $telefone, $endereco, $cep, $cidade, $estado, $complemento, $numero) {
         $this->idUsuario = $idUsuario;
         $this->nome = $nome;
         $this->email = $email;
@@ -116,6 +131,8 @@ class User {
         $this->cep = $cep;
         $this->cidade = $cidade;
         $this->estado = $estado;
+        $this->complemento = $complemento;
+        $this->numero = $numero;
     }
 }
 
