@@ -16,28 +16,21 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `usuario`
+-- Table structure for table `produtos`
 --
 
-DROP TABLE IF EXISTS `usuario`;
+DROP TABLE IF EXISTS `produtos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `usuario` (
-  `id_usuario` int NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `dataNascimento` date NOT NULL,
-  `cpf` varchar(14) DEFAULT NULL,
-  `telefone` varchar(20) DEFAULT NULL,
-  `is_entregador` tinyint(1) DEFAULT '0',
-  `id_endereco` int NOT NULL,
-  PRIMARY KEY (`id_usuario`),
-  UNIQUE KEY `email` (`email`),
-  UNIQUE KEY `cpf` (`cpf`),
-  KEY `id_endereco_idx` (`id_endereco`),
-  CONSTRAINT `id_endereco` FOREIGN KEY (`id_endereco`) REFERENCES `endereco` (`id_endereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `produtos` (
+  `idprodutos` int NOT NULL,
+  `nome` varchar(145) NOT NULL,
+  `descricao` varchar(245) NOT NULL,
+  `valor` float NOT NULL,
+  `id_loja` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`idprodutos`),
+  UNIQUE KEY `idprodutos_UNIQUE` (`idprodutos`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +42,4 @@ CREATE TABLE `usuario` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-03 14:36:32
+-- Dump completed on 2025-06-05 11:29:06

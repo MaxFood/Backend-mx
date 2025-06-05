@@ -16,27 +16,22 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `pedido`
+-- Table structure for table `endereco`
 --
 
-DROP TABLE IF EXISTS `pedido`;
+DROP TABLE IF EXISTS `endereco`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `pedido` (
-  `id_pedido` int NOT NULL AUTO_INCREMENT,
-  `id_usuario` int NOT NULL,
-  `id_loja` int NOT NULL,
-  `id_entregador` int NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `data_pedido` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `valor_total` decimal(10,2) NOT NULL,
-  `itens_do_pedido` varchar(200) NOT NULL,
-  `forma_de_pagamento` varchar(45) NOT NULL,
-  PRIMARY KEY (`id_pedido`),
-  KEY `id_usuario` (`id_usuario`),
-  KEY `id_loja` (`id_loja`),
-  KEY `id_entregador` (`id_entregador`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `endereco` (
+  `id_endereco` int NOT NULL AUTO_INCREMENT,
+  `endereco` varchar(255) DEFAULT NULL,
+  `cep` varchar(10) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `estado` varchar(50) DEFAULT NULL,
+  `numero` varchar(100) DEFAULT NULL,
+  `complemento` varchar(240) DEFAULT NULL,
+  PRIMARY KEY (`id_endereco`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +43,4 @@ CREATE TABLE `pedido` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-03 14:36:32
+-- Dump completed on 2025-06-05 11:29:06

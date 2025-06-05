@@ -23,11 +23,15 @@ DROP TABLE IF EXISTS `entregador`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `entregador` (
-  `id_entregador` int NOT NULL,
-  `veiculo` varchar(50) DEFAULT NULL,
-  `status` varchar(20) DEFAULT NULL,
-  `placa` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`id_entregador`)
+  `id_entregador` int NOT NULL AUTO_INCREMENT,
+  `veiculo` varchar(50) NOT NULL,
+  `status` varchar(20) NOT NULL,
+  `placa` varchar(20) NOT NULL,
+  `CNH` int NOT NULL,
+  `id_usuario` int NOT NULL,
+  PRIMARY KEY (`id_entregador`),
+  KEY `id_usuario_idx` (`id_usuario`),
+  CONSTRAINT `id_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -40,4 +44,4 @@ CREATE TABLE `entregador` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-03 14:36:32
+-- Dump completed on 2025-06-05 11:29:07
