@@ -16,24 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `loja`
+-- Table structure for table `pedido`
 --
 
-DROP TABLE IF EXISTS `loja`;
+DROP TABLE IF EXISTS `pedido`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `loja` (
-  `id_loja` int NOT NULL AUTO_INCREMENT,
-  `cnpj` varchar(20) NOT NULL,
-  `senha` varchar(255) NOT NULL,
-  `telefone` varchar(20) NOT NULL,
-  `nome_loja` varchar(100) NOT NULL,
-  `id_endereco` int NOT NULL,
-  `email` varchar(100) NOT NULL,
-  PRIMARY KEY (`id_loja`),
-  UNIQUE KEY `cnpj` (`cnpj`),
-  KEY `id_endereco_idx` (`id_endereco`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `pedido` (
+  `id_pedido` int NOT NULL AUTO_INCREMENT,
+  `id_usuario` int NOT NULL,
+  `id_loja` int NOT NULL,
+  `id_entregador` int NOT NULL,
+  `status` varchar(50) NOT NULL,
+  `data_pedido` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `valor_total` decimal(10,2) NOT NULL,
+  `itens_do_pedido` varchar(200) NOT NULL,
+  `forma_de_pagamento` varchar(45) NOT NULL,
+  PRIMARY KEY (`id_pedido`),
+  KEY `id_usuario` (`id_usuario`),
+  KEY `id_loja` (`id_loja`),
+  KEY `id_entregador` (`id_entregador`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -45,4 +48,4 @@ CREATE TABLE `loja` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-05 11:29:07
+-- Dump completed on 2025-06-05 13:01:25
